@@ -1,0 +1,17 @@
+body{
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.item.purchased {
+    text-decoration: line-through;
+    cursor: pointer;
+  }
+
+  .clear-btn {
+    padding: 4px;
+
+    
+  }
