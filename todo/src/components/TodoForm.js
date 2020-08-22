@@ -1,39 +1,32 @@
-import React, { useState, useReducer } from 'react';
-import { 
-     todoReducer,
-     initialState,
-     ADD_TODO,
-     TOGGLE_TODO
-} from '../reducers/todoReducer';
+import React, { useState } from 'react';
 
- const TodoForm = () => {
-    const [initialValue, setInitialValue] = useState({item: " "})
-    const [state, dispatch] = useReducer(todoReducer, initialState);
+ const TodoForm = (props) => {
+    const [initialValue, setInitialValue] = useState(" ")
 
     const handleChanges = (e) => {
-        setInitialValue({item: e.target.value})
+        setInitialValue(e.target.value)
     }
 
     const submitHandler = (e) => {
-        e.preventDefault()
-        
+         e.prevenDefault();
+        props.dispatch({ type: props.ADD_TODO, payload: { initialValue }})
+    
     }
 
     return(
         <div>
             <h1>TodoList</h1>
-            {state.item} 
             <form onSubmit={submitHandler}>
               <input
-             type="text"
+              type="text"
               value={initialValue}
               onChange={handleChanges}
              >
                 
              </input>
               <button
-             onClick= { dispatch({ type: ADD_TODO, payload: {initialValue}})}>
-            Add todo</button>
+             onClick= {submitHandler}>
+             Add todo</button>
             </form>
         </div>
     );

@@ -5,6 +5,7 @@ import "./Todo.css"
 
  return(
    <div className={`item${props.todoData.completed ? " purchased" : ""}`} >
+       
    <h3>{props.todoData.item}</h3>
  </div>
  );

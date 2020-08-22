@@ -16,8 +16,10 @@ export const todoReducer = (state, action)  => {
        case ADD_TODO:
          return [...state, 
           { item: action.payload, 
-            completed: !state.completed, 
+            completed: false, 
             id: Date.now() }]
+
+            
             case TOGGLE_TODO:
             console.log("Toggle", action.payload);
             return state.map((item)=>{
