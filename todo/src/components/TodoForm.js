@@ -8,10 +8,10 @@ import React, { useState } from 'react';
     }
 
     const submitHandler = (e) => {
-         e.prevenDefault();
-        props.dispatch({ type: props.ADD_TODO, payload: { initialValue }})
-    
+         e.preventDefault();
+         props.dispatch({ type: "ADD_TODO", payload:  initialValue })
     }
+    
 
     return(
         <div>

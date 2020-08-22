@@ -12,7 +12,7 @@ function App() {
   const [state, dispatch] = useReducer(todoReducer, initialState)
   return (
     <div className="App">
-      <TodoList todoData={state} />
+      <TodoList dispatch={dispatch} todoData={state} />
       <TodoForm dispatch={dispatch} ADD_TODO={ADD_TODO} />
     </div>
   );
