@@ -1,0 +1,11 @@
+body{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .item.completed {
+      text-decoration: line-through;
+      cursor: pointer;
+    }
